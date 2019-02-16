@@ -1,0 +1,19 @@
+The model used is faster cnn model. Faster cnn are great for extracting features and training on custom datasets also.
+
+A pretrained model was used which was trained on the given dataset.
+The model was tuned and rectified to work effecietly as per the dataset.
+
+
+annotate.txt      ==>  the dataset was changed to this file so that the model can be run. 
+train_frcnn.py    ==>  this is the file for training the model on the dataset. To execute this file the following command was written in the command prompt =>   python train_frcnn.py -o simple -p annotate.txt
+test_frcnn.py     ==>  this is the file for getting the predictions. This fdile outputs the predicted images in a folder named 'results_imgs', To execute this file the following command was written in the command prompt => python test_frcnn.py -p test_images
+
+the model when run(i.e. when train_frcnn is executed) calculates the weights after each epoch. These weights are then saved to 'model_frcnn.hdf5' file. 
+The number of epochs used to get the final weights are 53. This is very less and hence the accuracy is reduced but due to the time constraints the number was reduced. Ideally, this model works best with atleast 700 epochs.
+After execution of train_frcnn.py file the weights are saved.
+Now the test_frcnn.py file is executed. This file runs the model and gets the predictions using the weights saved in 'model_frcnn.hdf5' file.
+The output images are saved in results_imgs folder.
+The bounding box coordinates are saved in test.csv file.
+
+The model is made using keras and works using tensorflow backend.
+The model was run on tensorflow gpu, with nvidia 940m series gpu.

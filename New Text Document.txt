@@ -1,0 +1,6 @@
+activate tf-gpu
+python train_frcnn.py -o simple -p annotate.txt
+
+activate tf-gpu
+python test_frcnn.py -p test_images
+
